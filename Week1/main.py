@@ -16,6 +16,7 @@ print(df['sentiment'].value_counts())
 
 kill_count = df['text'].str.contains('kill', case=False, na=False).sum()
 print(f"Number of tweets containing 'kill': {kill_count}")
+print(f"out of: {len(df)} tweets")#total num of tweets
 
 
 df['sentiment'].value_counts().plot(kind='bar')
