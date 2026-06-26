@@ -1,3 +1,5 @@
+from xml.dom.minidom import Entity
+
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns 
@@ -24,3 +26,15 @@ df['sentiment'].value_counts().plot(kind='bar')
 sns.countplot(data=df, x='sentiment')
 plt.show()
 ##plt.show()
+
+missing = df.isnull().sum()
+print(f"Missing values:\n{missing}")
+
+df["sentiment"].value_counts().plot(kind="bar")
+
+df["entity"].value_counts().head(5).plot(kind="bar")
+
+plt.title("Top 5 Most Mentioned Entities")
+plt.xticks(rotation=0)
+plt.show()
+
