@@ -99,12 +99,14 @@ stop_words = [
     "can", "could", "should", "from", "by", "about", "if",
     "but", "they", "them", "their", "he", "she", "his",
     "her", "its", "just", "so", "not", "no", "yes", "all", "any", "some", "more", "most",
-    "other", "than", "then", "when", "where", "who", "/", "what", "how", "why", "which", "these", "those", "also", "because", "while", "after", "before", "during", "between", "among", "through", "over", "under", "again", "further", "once"
+    "other", "than", "then", "when", "where", "who", "/", "what", "how", "why", "which", "these", "those", "also", "because", "while", "after", "before", "during", "between", "among", "through", "over", "under", "again", "further", "once",
     "@", ".", "!", "?", ",", ".", ":", ";", "-", "_", "'", '"', "(", ")", "[", "]", "{", "}", "<", ">", "#", "$", "%", "^", "&", "*", "+", "=", "|",
-    "get", "out", "now", "new", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"
-    "like", "do", "really", "i'm", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0"
-    "see", "know", "think", "want", "need", "feel", "say", "make", "go", "come", "take", "give", "look", "use", "find", "tell", "ask", "work", "try"
-    "up", "down", "left", "right", "back", "forward", "around", "through", "over", "under", "above", "below", "inside", "outside"
+    "get", "out", "now", "new", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten",
+    "like", "do", "really", "i'm", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0",
+    "see", "know", "think", "want", "need", "feel", "say", "make", "go", "come", "take", "give", "look", "use", "find", "tell", "ask", "work", "try",
+    "up", "down", "left", "right", "back", "forward", "around", "through", "over", "under", "above", "below", "inside", "outside","been", "it's", "still", "even", "much", "many", "most", "some", "any", "all", "each", "every", "few", "several", "both", "either", "neither", "another", "other", "others", "such", "'","`","got",
+    "`","'",
+
 ]
 
 # Keep only important words
