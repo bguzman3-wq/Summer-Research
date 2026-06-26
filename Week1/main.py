@@ -20,23 +20,23 @@ print(f"Number of tweets containing 'kill': {kill_count}")
 print(f"out of: {len(df)} tweets")#total num of tweets
 
 
-##df['sentiment'].value_counts().plot(kind='bar')
-##df['text'].value_counts().plot(kind='pie') trying to display kill count in a pie chart
 sns.countplot(data=df, x='sentiment')
 plt.show()
-##plt.show()
 
+
+#missing values
 missing = df.isnull().sum()
 print(f"Missing values:\n{missing}")
 
+#sentiment and entity visualization
 df["sentiment"].value_counts().plot(kind="bar")
-
 df["entity"].value_counts().head(5).plot(kind="bar")
 
 plt.title("Top 5 Most Mentioned Entities")
 plt.xticks(rotation=0)
 plt.show()
 
+#kill visualization
 no_kill_count = len(df) - kill_count
 
 plt.figure(figsize=(6,5))
