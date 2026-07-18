@@ -14,6 +14,10 @@ from sklearn.metrics import (
     ConfusionMatrixDisplay
 )
 
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
+
+
 df = pd.read_csv('twitter_training.csv', header=None,
                   names=['tweet_id', 'entity', 'sentiment', 'text'])
 
@@ -416,3 +420,58 @@ for tweet, prediction in zip(
 ):
     print(f"\nTweet: {tweet}")
     print(f"Predicted sentiment: {prediction}")
+
+
+random_forest_model = RandomForestClassifier(
+    n_estimators=100,
+    random_state=42,
+    n_jobs=-1
+)
+
+# Train the model
+random_forest_model.fit(X_train_tfidf, y_train)
+
+# Predict sentiment labels
+random_forest_predictions = random_forest_model.predict(X_test_tfidf)
+
+# Calculate and display accuracy
+random_forest_accuracy = accuracy_score(
+    y_test,
+    random_forest_predictions
+)
+
+print("Random Forest Accuracy:", random_forest_accuracy)
+
+# Display precision, recall, and F1-score
+print("\nRandom Forest Classification Report:")
+print(classification_report(y_test, random_forest_predictions))
+
+# Create the confusion matrix
+random_forest_cm = confusion_matrix(
+    y_test,
+    random_forest_predictions
+)
+
+# Display the confusion matrix
+plt.figure(figsize=(8, 6))
+
+sns.heatmap(
+    random_forest_cm,
+    annot=True,
+    fmt="d",
+    cmap="Blues",
+    xticklabels=random_forest_model.classes_,
+    yticklabels=random_forest_model.classes_
+)
+
+plt.title("Random Forest Confusion Matrix")
+plt.xlabel("Predicted Sentiment")
+plt.ylabel("Actual Sentiment")
+plt.tight_layout()
+plt.show()
+
+logistic_accuracy = accuracy_score(y_test, y_pred)
+
+print("\nModel Comparison")
+print("Logistic Regression Accuracy:", logistic_accuracy)
+print("Random Forest Accuracy:", random_forest_accuracy)
